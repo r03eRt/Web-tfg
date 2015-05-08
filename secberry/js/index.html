@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/mystyle.css"  />
+
+      <meta charset="utf-8">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+       <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.js"></script>
+      <script type="text/javascript" src="js/jquery-scrollspy.js"></script>
+	  <script type="text/javascript" src="js/smooth-scroll.js"></script>
+
+      <script>
+      	$(document).ready(function(){
+      		$(".dropdown-button").dropdown({hover: false});
+      		  $('.slider').slider({
+      		  	indicators:false,
+      		  	height:550,
+      		  	interval:3000
+      		  });
+
+      		$(window).scroll(function() {
+
+      			 if ($(document).scrollTop() == 300 ) {
+      			 	 $('#features_all').fadeIn("6000");
+      			 }
+      			 if ($(document).scrollTop() == 2500 ) {
+      			 	 $('#show1').fadeIn("6000");
+      			 	 $('#show2').fadeIn("6000");
+      			 }
+      			
+			});
+			$('.parallax').parallax();
+			$('.materialboxed').materialbox();
+			$('.scrollspy').scrollSpy();
+      	});
+
+
+      	
+
+      </script>
+
+      <script >
+      	function loadDemo(){
+				
+			  // nice one David Walsh	
+           	  var demoTwo = new ScrollSpy({
+				 min: 0, // acts as position-x: absolute; left: 50px;
+				 mode: 'horizontal',
+				 onEnter: function(position,enters) {
+				
+				 },
+				 onLeave: function(position,leaves) {
+				
+				 },
+				 onTick: function(position,state,enters,leaves) {
+				 	$("#menu_lateral").style.left = -position.x+50+"px";
+				 },
+				 container: window
+				}); 
+				
+		
+		}	
+      </script>
+      
+    </head>
+    <body>
+   		<!-- Dropdown Structure -->
+		<ul id="dropdown1" class="dropdown-content" >
+		  <li><a href="#!">one</a></li>
+		  <li><a href="#!">two</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#!">three</a></li>
+		</ul>
+		
+
+
+		
+		<ul class="section table-of-contents hide-on-small-only" id="tabla_contenido">
+            <li><a data-scroll href="#inicio" class="">Inicio</a></li>
+            <li><a href="#structure" class="">Structure</a></li>
+            <li><a href="#initialization" class="">Intialization</a></li>
+         </ul>
+	
+
+		<div class="slider">
+		<nav>
+		  <div class="nav-wrapper"  id="inicio">
+		    <a href="#!" class="brand-logo"><img src="images/logo illustrator_shadow.svg" alt="" width="40%" height="40%"></a>
+		    <ul class="right hide-on-med-and-down">
+		      <li><a href="index.html">Home</a></li>
+		      <li><a href="index.html">LogIn</a></li>
+		      <li><a href="index.html">Regístrate</a></li>
+		      <li><a href="components.html">Components</a></li>
+		      <!-- Dropdown Trigger -->
+		      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+		    </ul>
+		  </div>
+		</nav>
+		    <ul class="slides" style="background-color:white">
+		      <li>
+		        <img src="http://lorempixel.com/580/250/nature"> <!-- random image -->
+		        <div class="caption center-align">
+		          <h3>This is our big Tagline!</h3>
+		          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+		        </div>
+		      </li>
+		      <li>
+		        <img src="http://lorempixel.com/580/250/nature"> <!-- random image -->
+		        <div class="caption left-align">
+		          <h3>Left Aligned Caption</h3>
+		          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+		        </div>
+		      </li>
+		      <li>
+		        <img src="http://lorempixel.com/580/250/nature"> <!-- random image -->
+		        <div class="caption right-align">
+		          <h3>Right Aligned Caption</h3>
+		          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+		        </div>
+		      </li>
+		      <li>
+		        <img src="http://lorempixel.com/580/250/nature"> <!-- random image -->
+		        <div class="caption center-align">
+		          <h3>This is our big Tagline!</h3>
+		          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+		        </div>
+		      </li>
+		    </ul>
+		  </div>
+		<div class="section no-pad-bot" height="400px">
+			<div class="container" >
+		<!--   Icon Section   -->
+			<h1 class="header center blue-text">Un sistema con muchas virtudes</h1>
+				<div class="row"  id="features_all">
+					<div class="col s12 m3" id="features_1">
+						<div class="icon-block">
+							<h2 class="center light-blue-text "><img class="responsive-img" src="images/iconos/economico.svg" width="50%" height="50%"></h2>
+							<h5 class="center light-blue-text">Económico</h5>
+							<p class="light">-Sin cuotas,sin mantenimiento, sin depender de terceros.</p>
+							<p class="light">-Instalación en menos de 24 horas sin obra alguna.</p>
+							<p class="light">-Precio asequible para todos los bolsillos.</p>
+						</div>
+					</div>
+
+					<div class="col s12 m3" id="features_2">
+						<div class="icon-block">
+							<h2 class="center light-blue-text"><img src="images/iconos/seguridad2.svg" width="50%" height="50%"></h2>
+							<h5 class="center light-blue-text">Seguridad</h5>
+
+							<p class="light">-Un sistema de seguridad pensado y desarrollado por y para usuarios.</p>
+							<p class="light">-Saber que sucede en su casa sin complicaciones y sin necesidad de difíciles instalaciones.</p>
+						</div>
+					</div>
+
+					<div class="col s12 m3" id="features_3">
+						<div class="icon-block">
+							<h2 class="center light-blue-text"><img src="images/iconos/privacidad.svg" width="50%" height="50%"></h2>
+							<h5 class="center light-blue-text">Privacidad</h5>
+
+							<p class="light">-Garantía de total privacidad: Independencia de terceros.</p>
+							<p class="light">-Sólo usted sabrá que está pasando en su casa en cualquier momento.</p>
+						</div>
+					</div>
+					<div class="col s12 m3" id="features_3">
+						<div class="icon-block">
+							<h2 class="center light-blue-text"><img src="images/iconos/directo.svg" width="50%" height="50%"></h2>
+							<h5 class="center light-blue-text">Directo</h5>
+
+							<p class="light">-Consulte desde cualquier dispositivo o Pc en tiempo real lo que esta pasando.</p>
+							<p class="light">-Reciba mensajes,o fotografías en su movil o emails en caso de alguna incidencia,avisos totalmente configurables.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="parallax-container2">
+			  <div class="container">      
+	            <br><br>            
+	            <div class="row center">
+	              <h2 class="center white-text titular">Hardware sencillo pero efectivo...</h2>
+	            </div>
+	          <br><br>
+	        </div>
+			<div class="parallax para2" ><img src="images/hardware.jpg" ></div>
+		</div>
+
+		<div class="section no-pad-bot" >
+			<div class="container">
+				<div class="row" style="background-color:">
+					<div class="col s12 m6" style="background-color:"><img class="materialboxed" src="images/raspberry_pi_white.png" alt="" width="100%" height="100%"></div>
+					<div class="col s12 m6">
+					<br><br><br><br>
+						<h1 class="header  blue-text">Raspberry Pi</h1>
+						<p class="light">Contamos con una Raspberry Pi con un System-on-a-chip Broadcom BCM2835 :</p>
+						<p class="light">-CPU ARM1176JZF-S a 700 MHz (Overclocking hasta 1GHz).</p>
+						<p class="light">-Procesador gráfico (GPU) Broadcom VideoCore IV.</p>
+						<p class="light">-512 MB de memoria RAM tipo SDRAM.</p>
+						<p class="light">-Ethernet (RJ-45) via hub USB.</p>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<div class="parallax-container2" >
+			  <div class="container">      
+	            <br><br>            
+	            <div class="row center">
+	              <h2 class="center white-text titular">Porque una imagen dice más que mil palabras...</h2>
+	            </div>
+	          <br><br>
+	        </div>
+			<div class="parallax para2"><img src="images/camera_big.jpg" ></div>
+		</div>
+		<div class="section no-pad-bot" >
+			<div class="container">
+				<div class="row" style="background-color:">
+				<div class="col s12 m6" style="background-color:">
+					<br><br><br><br>
+						<h1 class="header  blue-text">Raspberry Pi Noir </h1>
+						<p class="light">Nuestro sistema de seguridad se basa en:</p>
+						<p class="light">-Sensor Omnivision 5647 resolucion de 5MP (2.592x1944 píxeles).</p>
+						<p class="light">-Grabación y reproduccion de video HD 1080p a 30fps,también soporta grabacion 720p @ 60fps y 640x480 60/90.</p>
+					
+					</div>
+					<div class="col s12 m6"><img class="materialboxed" src="images/pinoir.png" alt="" width="100%" height="100%"></div>
+					
+				</div>	
+			</div>
+		</div>
+
+		<div class="section blue">
+			<div class="container">
+			<h1 class="header  white-text center">La combinación perfecta</h1>
+				<div class="row" id="show1" >
+					<div class="col s12 m4 center "><img src="images/rasperry_logo.svg" alt="" width="40%" height="40%"></div>
+					<div class="col s12 m4 center "><br><br><img src="images/Sum2.svg" alt="" width="30%" height="30%"></div>
+					<div class="col s12 m4 " ><br><br><img src="images/Motion_logo.svg" alt="" width="100%" height="100%"></div>
+				</div>				
+			</div>
+		</div>
+		<div class="section blue">
+			<div class="container" id="show2" >
+			<p class="light  center white-text">En nuestro proyecto combinamos a la perfeción la versatilidad que nos proporciona nuestra Rasperry Pi junto con Motion, uno de los softwares de detección de movimiento opensource más avanzados en la actualidad.La union de estos elementos nos permite ofrecer en tiempo real imágenes con gran calidad sobre lo que está ocurriendo en su hogar.</p>
+			</div>
+		</div>
+
+		<div class="section no-pad-bot" id="index-banner" >
+			<div class="container" id="introduction">
+				<br><br>
+				<h1 class="header center blue-text">Starter Template</h1>
+				<div class="row center">
+					<h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+				</div>
+				<div class="row center" id="hola">
+					<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light  blue lighten-1">Get Started</a>
+				</div>
+				<br><br>
+			</div>
+		</div>
+
+		
+		
+		<footer class="page-footer">
+          <div class="container">
+            <div class="row" style="margin-bottom:0px" >
+              <div class="col l6 s12" >
+                <div class="row" >
+				  <form class="col s12" >
+				  <h3 class="white-text">Contacta con nosotros</h3>
+				    <div class="row" >
+				      <div class="input-field col s6">
+				        <input id="first_name" type="text" class="validate white-text">
+				        <label class="white-text" for="first_name">Nombre</label>
+				      </div>
+				      <div class="input-field col s6 white-text">
+				        <input id="last_name" type="text" class="validate white-text">
+				        <label class="white-text" for="last_name">Apellidos</label>
+				      </div>
+				    </div>				    
+				    <div class="row">
+				      <div class="input-field col s12">
+				        <input id="email" type="email" class="validate white-text">
+				        <label  class="white-text"for="email">Email</label>
+				      </div>
+				    </div>
+				    <div class="row">
+				    	<button class="btn waves-effect waves-light  blue lighten-1" type="submit" name="action">Contactar<i class="mdi-content-send right"></i></button>
+				    </div>
+				  </form>
+				</div>
+              </div>
+              <div class="col l6 s12" ><img src="images/rasperrywhite.svg" alt="" width="100%" height="100%"></div>
+
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+			<script>smoothScroll.init();</script>
+          
+        </footer>
+
+    </body>
+  </html>

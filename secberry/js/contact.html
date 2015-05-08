@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/mystyle.css"  />
+
+      <meta charset="utf-8">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+       <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.js"></script>
+      <script type="text/javascript" src="js/jquery-scrollspy.js"></script>
+	  <script type="text/javascript" src="js/smooth-scroll.js"></script>
+
+      <script>
+      	$(document).ready(function(){
+      		$(".dropdown-button").dropdown({hover: false});
+      		  $('.slider').slider({
+      		  	indicators:false,
+      		  	height:550,
+      		  	interval:3000
+      		  });
+
+      		$(window).scroll(function() {
+
+      			 if ($(document).scrollTop() == 300 ) {
+      			 	 $('#features_all').fadeIn("6000");
+      			 }
+      			 if ($(document).scrollTop() == 2500 ) {
+      			 	 $('#show1').fadeIn("6000");
+      			 	 $('#show2').fadeIn("6000");
+      			 }
+      			
+			});
+			$('.parallax').parallax();
+			$('.materialboxed').materialbox();
+			$('.scrollspy').scrollSpy();
+      	});
+
+
+      	
+
+      </script>
+
+      <script >
+      	function loadDemo(){
+				
+			  // nice one David Walsh	
+           	  var demoTwo = new ScrollSpy({
+				 min: 0, // acts as position-x: absolute; left: 50px;
+				 mode: 'horizontal',
+				 onEnter: function(position,enters) {
+				
+				 },
+				 onLeave: function(position,leaves) {
+				
+				 },
+				 onTick: function(position,state,enters,leaves) {
+				 	$("#menu_lateral").style.left = -position.x+50+"px";
+				 },
+				 container: window
+				}); 
+				
+		
+		}	
+      </script>
+      
+    </head>
+    <body>
+
+		<!-- Dropdown Structure -->
+		<ul id="dropdown1" class="dropdown-content" >
+		  <li><a href="#!">one</a></li>
+		  <li><a href="#!">two</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#!">three</a></li>
+		</ul>		
+	
+		<div class="parallax-container2">
+			  <div class="container" >
+			  	<nav id="no_sombra">
+				  <div class="nav-wrapper"  id="inicio">
+				    <a href="#!" class="brand-logo">Logo</a>
+				    <ul class="right hide-on-med-and-down">
+				      <li><a href="sass.html">Sass</a></li>
+				      <li><a href="components.html">Components</a></li>
+				      <!-- Dropdown Trigger -->
+				      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+				    </ul>
+				  </div>
+				</nav>      
+				<br><br>            
+				<div class="row center"  id="header_team">
+					<h2 class="center white-text titular">El equipo</h2>
+				</div>
+				<br><br>
+	        </div>
+			<div class="parallax" ><img src="images/equipo.jpg" ></div>
+
+		</div>
+
+		<div class="section" >
+			<div class="container">
+				<div class="row">
+					<h2 class="center  blue-text">Nuestro equipo de profesionales</h2>
+					<br><br>
+						<div class="col s12 m4 center" style="background-color:">
+							<img class="circle responsive-img" src="images/mor.jpg">
+							<h4 class="center  blue-text">Roberto Morgado </h4>
+							<p><strong>Programador Web</strong></p>
+						</div>
+						<div class="col s12 m4 center" style="background-color:">
+							<img class="circle responsive-img" src="images/nax.jpg">
+							<h4 class="center  blue-text">Ignacio Bartolomé </h4>
+							<p><strong>Experto en Bases de datos</strong></p>
+						</div>
+						<div class="col s12 m4 center" style="background-color:">
+							<img class="circle responsive-img" src="images/rusopo.jpg">
+							<h4 class="center blue-text">Rubén Soto </h4>
+							<p><strong>Programador Java</strong></p>
+						</div>
+				</div>	
+			</div>
+		</div>
+		<div class="arrow-down"></div>
+
+		<div class="section  blue" >
+				<div class="row">
+					<div class="col s12 m5" style="background-color:">
+						<img src="images/rasperrywhite.svg" alt="" width="100%" height="100%">
+					</div>
+					<div class="col s12 m1" style="visibility:hidden">space</div>
+					<div class="col s12 m5 "><br><br>
+						<h2 class="white-text center">Calidad:Uno de los valores fundamentales</h2><br><br>
+						<p class="white-text">Contamos con un gran equipo de profesionales que trabajan para ofrecerles un producto de calidad y la mejor experiencia de usuario a la hora de proteger su casa.
+						<p class="white-text">Nos gusta lo que hacemos, eso nos permite ofrecerles unos productos con un cuidado diseño y con gran atencion a los detalles para que todo funcione como debe cuando debe.</p>
+					</div>
+					
+				</div>	
+		</div>
+
+		<div class="section" id="nomargin" >
+			<div class="row" style="margin-bottom:0px;" >
+				<div class="col s12 m6 " >
+				<h2 class="center blue-text">Trabajamos con las últimas tecnologías</h2>
+					<div class="row">
+					  <div class="col s2 preview" style="visibility:hidden">espacio</div>
+				      <div class="col s2 preview center"><img src="images/marcas/html5-logo.png" alt="" width="100%" height="100%"><strong>Html5</strong></div>
+				      <div class="col s2 preview center"><img src="images/marcas/css3-logo.png" alt="" width="100%" height="100%"><strong>Css3</strong></div>
+				      <div class="col s2 preview center"><img src="images/marcas/javascript-logo.png" alt="" width="100%" height="100%"><strong>Javascript</strong></div>
+				      <div class="col s2 preview center"><img src="images/marcas/php-logo.png" alt="" width="100%" height="100%"><strong>PHP</strong></div>
+				    </div> 
+				    <div class="row"> 
+				     <div class="col s2 preview center" style="visibility:hidden">espacio</div>
+				      <div class="col s2 preview center"><img src="images/marcas/eclipse-logo.png" alt="" width="100%" height="100%"><strong>Eclipse</strong></div>
+				      <div class="col s2 preview center"><img src="images/marcas/cplus-logo.png" alt="" width="100%" height="100%"><strong>C++</strong></div>
+				      <div class="col s2 preview center"><img src="images/marcas/java-logo.png" alt="" width="100%" height="100%"><strong>Java</strong></div>
+				      <div class="col s2 preview center"><img src="images/marcas/android-logo.png" alt="" width="100%" height="100%"><strong>Android</strong></div>
+				    </div>
+				    <div class="row" >
+				     <div class="col s2 preview center" style="visibility:hidden">espacio</div>
+				      <div class="col s2 preview center"><img src="images/marcas/mysql-logo.png" alt="" width="100%" height="100%"><strong>MySql</strong></div>
+				      <div class="col s2 preview center"><img src="images/marcas/github-logo.png" alt="" width="100%" height="100%"><strong>Github</strong></div>
+				      <div class="col s2 preview center"><img src="images/marcas/Ps-logo.png" alt="" width="100%" height="100%"><strong>Photoshop</strong></div>
+				      <div class="col s2 preview center"><img src="images/marcas/raspian-logo.png" alt="" width="100%" height="100%"><strong>Raspian</strong></div>
+					</div> 
+				</div>
+				<div class="col s12 m6 " id="software">
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="section no-pad-bot" height="400px">
+			<div class="container-fluid" id="container_proceso" >
+		<!--   Icon Section   -->
+			<h1 class="header center blue-text">Nuestro proceso</h1>
+				<div class="row"  id="features_all">
+					<div class="col s12 m2" id="features_1">
+						<div class="icon-block">
+							<h2 class="center light-blue-text "><img class="responsive-img" src="images/iconos/informar2.svg" width="50%" height="50%"></h2>
+							<h5 class="center light-blue-text">Informarnos</h5>
+							<p class="light">-Nuestro producto son el resultado de un amplio estudio del mercado y de las necesidades reales de los clientes.</p>
+							
+						</div>
+					</div>
+
+					<div class="col s12 m2" id="features_2">
+						<div class="icon-block">
+							<h2 class="center light-blue-text"><img src="images/iconos/planificar3.svg" width="50%" height="50%"></h2>
+							<h5 class="center light-blue-text">Planificar</h5>
+
+							<p class="light">-Para un producto de calidad que esté listo en los plazos previstos, planificamos con todo detalle el tiempo que nos lleva el desarrollo.</p>
+						</div>
+					</div>
+
+					<div class="col s12 m2" id="features_3">
+						<div class="icon-block">
+							<h2 class="center light-blue-text"><img src="images/iconos/diseñar.svg" width="50%" height="50%"></h2>
+							<h5 class="center light-blue-text">Diseñar</h5>
+
+							<p class="light">-Sabemos que para el usuario final es muy determinante lo agradable que sea el producto en sus manos,por eso nos precopamos por un diseño agradable sin perder funcionalidad.</p>
+						</div>
+					</div>
+					<div class="col s12 m2" id="features_3">
+						<div class="icon-block">
+							<h2 class="center light-blue-text"><img src="images/iconos/desarrollar.svg" width="50%" height="50%"></h2>
+							<h5 class="center light-blue-text">Desarrollar</h5>
+
+							<p class="light">-Con nuestro equipo de profesionales desarrollamos tanto el software como el hardware haciendo que todas las piezas encajen perfectamente.</p>
+						</div>
+					</div>
+					<div class="col s12 m2" id="features_3">
+						<div class="icon-block">
+							<h2 class="center light-blue-text"><img src="images/iconos/testear.svg" width="50%" height="50%"></h2>
+							<h5 class="center light-blue-text">Testear</h5>
+
+							<p class="light">-Todos nuestros productos son revisados y testeados para que no tengan ningun fallo antes de llegar a nuestros clientes</p>
+						</div>
+					</div>
+					<div class="col s12 m2" id="features_3">
+						<div class="icon-block">
+							<h2 class="center light-blue-text"><img src="images/iconos/disfrutar.svg" width="50%" height="50%"></h2>
+							<h5 class="center light-blue-text">Disfrutar</h5>
+
+							<p class="light">-¡Ya está todo listo!,ahora ¡A disfrutar! ,esperamos que quedes sarisfecho con nuestro trabajo.</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		
+		<footer class="page-footer"style="margin-top:0px" >
+          <div class="container" >
+            <div class="row" style="margin-bottom:0px" >
+              <div class="col l6 s12" >
+                <div class="row" >
+				  <form class="col s12" >
+				  <h3 class="white-text">Contacta con nosotros</h3>
+				    <div class="row" >
+				      <div class="input-field col s6">
+				        <input id="first_name" type="text" class="validate white-text">
+				        <label class="white-text" for="first_name">Nombre</label>
+				      </div>
+				      <div class="input-field col s6 white-text">
+				        <input id="last_name" type="text" class="validate white-text">
+				        <label class="white-text" for="last_name">Apellidos</label>
+				      </div>
+				    </div>				    
+				    <div class="row">
+				      <div class="input-field col s12">
+				        <input id="email" type="email" class="validate white-text">
+				        <label  class="white-text"for="email">Email</label>
+				      </div>
+				    </div>
+				    <div class="row">
+				    	<button class="btn waves-effect waves-light  blue lighten-1" type="submit" name="action">Contactar<i class="mdi-content-send right"></i></button>
+				    </div>
+				  </form>
+				</div>
+              </div>
+              <div class="col l6 s12" ></div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+			<script>smoothScroll.init();</script>
+          
+        </footer>
+
+    </body>
+  </html>

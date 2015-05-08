@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>SecBerry</title>
+   
+   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    
+    <!-- Loading Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	
+	<!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+	<!--<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+	<!--
+	<script>
+		$(function(){				
+			$("#boton-login").click(function(){
+				var usuario = $("#usuario-login").val();
+				var password = $("#password-login").val();
+				$.ajax({
+					url: 'http://morgadoluengo.com/secberry/login.php',
+					type: 'POST',
+					data: { usuario : usuario, password : password} ,
+					success: function(respuesta){
+						if (respuesta == true) {
+							location.href='main.html';
+							
+						}
+					}
+				});		
+			});
+		}); 
+	</script>-->
+	
+	<script>		
+			$(function(){				
+				$("#boton-login").click(function(){
+					var usuario = $("#usuario-login").val();
+					var password = $("#password-login").val();
+					$.post("http://localhost/secberry/www/login.php",{ usuario : usuario, password : password},function(respuesta){
+						if (respuesta == true) {
+							location.href='main.html';
+							
+						}
+					});
+				});
+			});
+	</script>
+  </head>
+  
+    <body>
+	
+	<style>
+        html{
+          background-color: black;
+        }
+     </style>
+	
+	<div data-role="page" data-theme='b'>
+	  <div data-role="content"> 
+		  
+		  <form action="http://localhost/secberry/www/registrar.php" method="POST" enctype="multipart/form-data">
+		  	<div class="form-group">
+				<input type="text" class="form-control" name="alias" placeholder="Alias" id="alias-registro">
+				<input type="password" class="form-control" name="password" placeholder="Contraseña" id="password-registro">
+				<input type="password" class="form-control" name="password2" placeholder="Verificar contraseña" id="password-registro">
+				<input type="text" class="form-control" name="ip-publica" placeholder="IP Publica" id="ip-publica-registro">
+				<a href="http://www.cualesmiip.com/"> Averigua tu IP Publica AQUI</a>
+				<input type="text" class="form-control" name="nombre" placeholder="Nombre" id="nombre-registro">
+				<input type="text" class="form-control" name="apellidos" placeholder="Apellidos" id="apellidos-registro">
+				<input type="email" class="form-control" name="correo" placeholder="Correo" id="correo-registro">
+				<input type="number" class="form-control" name="telefono" placeholder="Teléfono" id="telefono-registro">
+				<input type="file" class="form-control" name="foto" id="foto-registro">	
+				<input type="text" class="form-control" name="clave-producto" placeholder="Clave" id="clave-producto-registro">	
+		  	</div>
+		  	<button type="submit" class="btn btn-primary btn-lg btn-block" name="boton-registro" id="boton-registro">Registrar</button>
+		  </form>
+		  
+		</div>
+	  </div>
+  </body>
+  
+	<!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/vendor/video.js"></script>
+    <script src="js/flat-ui.min.js"></script>
+	
+</html>
+
+
