@@ -38,25 +38,115 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="images/svg/Secberry_logo.svg" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="scroll active"><a href="#home">Home</a></li>
-                        <li class="scroll"><a href="#features">Features</a></li>
-                        <li class="scroll"><a href="#services">Services</a></li>
-                        <li class="scroll"><a href="#portfolio">Portfolio</a></li>
-                        <li class="scroll"><a href="#about">About</a></li>
-                        <li class="scroll"><a href="#meet-team">Team</a></li>
-                        <li class="scroll"><a href="#pricing">Pricing</a></li>
-                        <li class="scroll"><a href="#blog">Blog</a></li> 
-                        <li class="scroll"><a href="#get-in-touch">Contact</a></li>                        
+                        <li class="scroll"><a href="#features">Caracteristicas</a></li>
+                        <li class="scroll"><a href="#services">Servicios</a></li>
+                        <li class="scroll"><a href="#work-process">Nuestro Proceso</a></li>
+                          <li class="scroll"><a href="#tecnology">Tecnología</a></li> 
+                        <li class="scroll"><a href="#meet-team">Equipo</a></li>
+                        <li class="scroll"><a href="#pricing">Precio</a></li>
+                        <li  href="#myModal" data-toggle="modal" style="cursor:pointer;" ><a >Registro</a></li>    
+                        <li class="scroll"><a href="#get-in-touch">Contacto</a></li> 
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
+
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                      <a class="close" data-dismiss="modal">×</a>
+                      <h3>Registro de Producto</h3>
+                </div>
+                <div style="padding:10px">
+                    <form>
+                        <div class="form-group col-lg-6">
+                            <label for="exampleInputEmail1">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label for="exampleInputEmail1">Apellidos</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label for="exampleInputEmail1">Usuario</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label for="exampleInputEmail1">Contraseña</label>
+                            <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label for="exampleInputEmail1">Confirma Contraseña</label>
+                            <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group col-lg-6" style="padding:0px">
+                                <label for="exampleInputEmail1">Ip Pública</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            </div>
+                            <div class=" col-lg-6">
+                                <a href="http://cual-es-mi-ip-publica.com/" title="Haz click para averiguar tu ip publica" target="_blank">
+                                <i class="small mdi-action-info-outline"></i>¿Cual es mi ip Pública?
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-lg-6">
+                            <label for="exampleInputEmail1">Teléfono</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label for="exampleInputEmail1">Clave Producto</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="exampleInputFile">Foto</label>
+                            <input type="file" id="exampleInputFile">
+                        </div>
+                    </form>
+                </div>
+                 <div class="modal-footer">
+                     <button class="btn btn-success" id="submit">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+ $(function() {
+//twitter bootstrap script
+    $("#submit").click(function(){
+            $.ajax({
+            type: "POST",
+        url: "process.php",
+        data: $('form.contact').serialize(),
+            success: function(msg){
+                    $("#thanks").html(msg)
+                $("#form-content").modal('hide');   
+                },
+        error: function(){
+            alert("failure");
+            }
+            });
+    });
+});
+</script>
+
+
 
     <section id="main-slider">
         <div class="owl-carousel">
@@ -888,13 +978,12 @@
         </div>
     </section><!--/#pricing-->
 
-    <section id="testimonial">
+    <!--<section id="testimonial">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
 
                     <div id="carousel-testimonial" class="carousel slide text-center" data-ride="carousel">
-                        <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
                                 <p><img class="img-circle img-thumbnail" src="images/testimonial/01.jpg" alt=""></p>
@@ -910,7 +999,6 @@
                             </div>
                         </div>
 
-                        <!-- Controls -->
                         <div class="btns">
                             <a class="btn btn-primary btn-sm" href="#carousel-testimonial" role="button" data-slide="prev">
                                 <span class="fa fa-angle-left" aria-hidden="true"></span>
@@ -925,7 +1013,7 @@
                 </div>
             </div>
         </div>
-    </section><!--/#testimonial-->
+    </section>/#testimonial-->
 
     
 
