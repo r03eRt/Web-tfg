@@ -207,6 +207,23 @@ jQuery(function($) {'use strict';
 		});
 	});
 
+
+
+	// Contact form
+	var form = $('#registro-contact-form');
+	form.submit(function(event){
+		event.preventDefault();
+		var form_status = $('<div class="form_status"></div>');
+		$.ajax({
+			url: $(this).attr('action'),
+			beforeSend: function(){
+				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Se está enviando el email/p>').fadeIn() );
+			}
+		}).done(function(data){
+			form_status.html('<p class="text-success">Gracias por registrarte en breve te enviaremos el codigo de activacion a tu email</p>').delay(3000).fadeOut();
+		});
+	});
+
 	//Pretty Photo
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		social_tools: false
