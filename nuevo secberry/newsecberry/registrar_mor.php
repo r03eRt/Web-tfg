@@ -4,7 +4,7 @@
 	$username = "u109200527_secbe";
 	$password = "S3cberry";
 	$db ="u109200527_secbe";
-	//error_reporting(-1);
+	error_reporting(-1);
 	// Conectando, seleccionando la base de datos
 	$link = mysql_connect('mysql.hostinger.es', 'u109200527_secbe', 'S3cberry')
 	    or die('No se pudo conectar: ' . mysql_error());
@@ -129,40 +129,32 @@ echo "Tu dirección IP externa es: ", $_SERVER['REMOTE_ADDR'];
 
 					$enlace='http://morgadoluengo.com/secberry/nuevo_secberry/newsecberry/validar.php'.'?cla='.md5($clave_a_enviar).'&cor='.$correo.'&pas='.$password2;
 
-
+					echo"enviado ok";
 
 					$header = 'From: ' ; 
 					$header .= "X-Mailer: PHP/" . phpversion() . " \r\n"; 
 					$header .= "Mime-Version: 1.0 \r\n"; 
 					$header .= "Content-type:text/html"; 
 
-					$mensaje = '<img src="http://morgadoluengo.com/secberry/nuevo_secberry/newsecberry/images/logo.png" alt="logo" width="200" height="100">
-								<br>
-								Gracias por adquirir nuestro producto<br>
-								<strong>podrás activar nuestro producto pulsando en el siguiente enlace</strong><br>
-								<a href="'.$enlace.'">Picha aqui</a> '; 
-
+					$mensaje = '<div>
+									<img src="http://morgadoluengo.com/secberry/nuevo_secberry/newsecberry/images/sec_logo.png" alt="logo" width="200" height="100">
+								</div>
+								<div>
+									Gracias por adquirir nuestro producto,<br>
+									<strong>podrás activar nuestro producto pulsando en el siguiente enlace:</strong><br>
+									<a style="lightblue" href="'.$enlace.'">Picha aqui</a>  
+								</div>';
 					$para = $correo; 
 					$asunto = 'Activacion producto Secberry'; 
 
 
 					if(mail($para, $asunto, utf8_decode($mensaje), $header)){ 
-					    //echo $enlace.'<br>';
-						//echo 'mensaje enviado correctamente<br>'; 
+					    echo $enlace.'<br>';
+						echo 'mensaje enviado correctamente<br>'; 
 					}else{ 
 					    echo "***ERROR***"; 
 					} 
-
-					
-
-					
-
-								header("Location: http://morgadoluengo.com/secberry/nuevo_secberry/newsecberry/");
-
-
-
-
-
+					header("Location: http://morgadoluengo.com/secberry/nuevo_secberry/newsecberry/");
 
 				}
 				/*$query_key="SELECT * FROM claves WHERE used=0";
