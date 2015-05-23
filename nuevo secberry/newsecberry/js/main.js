@@ -210,7 +210,7 @@ jQuery(function($) {'use strict';
 
 
 	// Contact form
-	var form = $('#registro-contact-form');
+	/*var form = $('#registro-contact-form');
 	form.submit(function(event){
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
@@ -222,7 +222,7 @@ jQuery(function($) {'use strict';
 		}).done(function(data){
 			form_status.html('<p class="text-success">Gracias por registrarte en breve te enviaremos el codigo de activacion a tu email</p>').delay(3000).fadeOut();
 		});
-	});
+	});*/
 
 	//Pretty Photo
 	$("a[rel^='prettyPhoto']").prettyPhoto({

@@ -24,7 +24,7 @@
 	$cp=$_POST['cp'];
 	$direccion=$_POST['direccion'];
 	$ciudad=$_POST['ciudad'];
-	$provincia=$_POST['provincia'];
+	$wifi_pass=$_POST['wifi_pass'];
 	$ssid=$_POST['ssid'];
 	$plan = $_POST['plan'];
 	
@@ -51,7 +51,7 @@
 
 
 
-echo "Tu dirección IP externa es: ", $_SERVER['REMOTE_ADDR'];			
+//echo "Tu dirección IP externa es: ", $_SERVER['REMOTE_ADDR'];			
 
 
 		if(!empty($alias) && !empty($password) && !empty($password2) && !empty($correo) && !empty($ip_publica)){
@@ -113,8 +113,8 @@ echo "Tu dirección IP externa es: ", $_SERVER['REMOTE_ADDR'];
 					//echo 'ya esta en la base de datos mensaje de que no se puede';
 				}else{
 					//echo 'no esta en la base de datos,inserto en la base de datos y mando un email con la clave';
-					$query_insert = "INSERT INTO usuario (alias, password,ip_publica, nombre,apellidos,telefono,correo,fecha_registrado,foto,cp,ciudad,provincia,direccion,ssid,plan) 
-					VALUES ('$alias','$password','$ip_publica','$nombre','$apellidos','$telefono','$correo','$fecha_registrado','$foto','$cp','$ciudad','$provincia','$direccion','$ssid','$plan')";
+					$query_insert = "INSERT INTO usuario (alias, password,ip_publica, nombre,apellidos,telefono,correo,fecha_registrado,foto,cp,ciudad,wifi_pass,direccion,ssid,plan) 
+					VALUES ('$alias','$password','$ip_publica','$nombre','$apellidos','$telefono','$correo','$fecha_registrado','$foto','$cp','$ciudad','$wifi_pass','$direccion','$ssid','$plan')";
 					$resultado_insert=mysql_query($query_insert);
 					$id_ultima = mysql_insert_id();
 					$query_libre="SELECT * FROM (SELECT * FROM claves WHERE usada=0 and pendiente=0) sin_usar LIMIT 1";
@@ -129,7 +129,7 @@ echo "Tu dirección IP externa es: ", $_SERVER['REMOTE_ADDR'];
 
 					$enlace='http://morgadoluengo.com/secberry/nuevo_secberry/newsecberry/validar.php'.'?cla='.md5($clave_a_enviar).'&cor='.$correo.'&pas='.$password2;
 
-					echo"enviado ok";
+					//echo"enviado ok";
 
 					$header = 'From: ' ; 
 					$header .= "X-Mailer: PHP/" . phpversion() . " \r\n"; 
@@ -150,7 +150,7 @@ echo "Tu dirección IP externa es: ", $_SERVER['REMOTE_ADDR'];
 
 					if(mail($para, $asunto, utf8_decode($mensaje), $header)){ 
 					    echo $enlace.'<br>';
-						echo 'mensaje enviado correctamente<br>'; 
+						//echo 'mensaje enviado correctamente<br>'; 
 					}else{ 
 					    echo "***ERROR***"; 
 					} 

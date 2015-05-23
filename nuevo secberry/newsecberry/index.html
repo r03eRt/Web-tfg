@@ -47,10 +47,11 @@
                         <li class="scroll"><a href="#features">Caracteristicas</a></li>
                         <li class="scroll"><a href="#services">Servicios</a></li>
                         <li class="scroll"><a href="#work-process">Nuestro Proceso</a></li>
-                          <li class="scroll"><a href="#tecnology">Tecnología</a></li> 
+                        <li class="scroll"><a href="#tecnology">Tecnología</a></li> 
                         <li class="scroll"><a href="#meet-team">Equipo</a></li>
                         <li class="scroll"><a href="#pricing">Precio</a></li>
                         <li  href="#myModal" data-toggle="modal" style="cursor:pointer;" ><a >Registro</a></li>    
+                        <li  class="active" href="#myModal2" data-toggle="modal" style="cursor:pointer;" ><a >Ingresar</a></li>    
                         <li class="scroll"><a href="#contact">Contacto</a></li> 
                     </ul>
                 </div>
@@ -70,7 +71,7 @@
                 
                  <div class="modal-footer" style="text-align:left!important">
 
-	                <form  role="form"  id="registro-contact-form" name="contact-form" method="post" action="registrar_mor.php">
+	                <form  role="form"  id="registro-contact-form" name="contact-form" method="post" action="registrar_mor.php" enctype="multipart/form-data">
                  		<div class="form-group col-lg-6">
                             <label for="exampleInputEmail1">Nombre</label>
                             <input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre">
@@ -80,7 +81,7 @@
                             <input type="text" class="form-control" id="exampleInputEmail1" name="apellidos" placeholder="Apellidos">
                         </div>
                         <div class="form-group col-lg-6">
-                            <label for="exampleInputEmail1">Email address</label>
+                            <label for="exampleInputEmail1">Email</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" name="correo" placeholder="Email">
                         </div>
                         <div class="form-group col-lg-6">
@@ -107,6 +108,10 @@
 		                        <input type="text" class="form-control" id="exampleInputEmail1" name="ssid" placeholder="SSID">
 		                    </div>
                         </div>
+                         <div class="form-group col-lg-6">
+                            <label for="exampleInputEmail1">Contraseña wifi</label>
+                            <input type="text" class="form-control" id="wifi_pass" name="wifi_pass" placeholder="Contraseña wifi">
+                        </div>
 
                         <div class="form-group col-lg-6">
                             <label for="exampleInputEmail1">Teléfono</label>
@@ -123,10 +128,6 @@
                          <div class="form-group col-lg-6">
                             <label for="exampleInputEmail1">Ciudad</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" name="ciudad" placeholder="Ciudad">
-                        </div>
-                        <div class="form-group col-lg-6">
-                            <label for="exampleInputEmail1">Provincia</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" name="provincia" placeholder="Provincia">
                         </div>
                         <div class="form-group col-lg-6" style="white-space: nowrap;overflow: hidden;text-overflow:ellipsis;">
                             <label for="exampleInputFile">Foto</label>
@@ -219,6 +220,33 @@
 						        </label>
 						      </div>
 						    </div>
+                        <div class="col-lg-4 col-lg-offset-4">
+                        	<button type="submit" style="text-align:center"class="col-lg-12 btn btn-success" >Enviar
+                        	</button>
+                        </div>
+	                </form>
+	            </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- Modal HTML -->
+    <div id="myModal2" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="text-align:center">
+                      <a class="close" data-dismiss="modal">×</a>
+                      <h3>Accede a nuestro servicio</h3>
+                </div>            		
+                
+                 <div class="modal-footer" style="text-align:left!important">
+
+	                <form  role="form"  id="registro-contact-form" name="contact-form" method="post" action="login.php" >
+                 		<div class="form-group col-lg-12">
+                            <label for="exampleInputEmail1">Introduce tu correo para acceder al servicio</label>
+                            <input type="text" class="form-control" id="email_login" name="email_login" placeholder="Email">
+                        </div>
+                                            
                         <div class="col-lg-4 col-lg-offset-4">
                         	<button type="submit" style="text-align:center"class="col-lg-12 btn btn-success" >Enviar
                         	</button>

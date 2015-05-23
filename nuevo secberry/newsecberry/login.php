@@ -10,11 +10,11 @@
 	echo 'Connected successfully';
 	mysql_select_db('u109200527_secbe') or die('No se pudo seleccionar la base de datos');
 	
-	$email=$_POST['email'];
-	echo $email;
+	$email_login=$_POST['email_login'];
+	echo $email_login;
 
 
-	$query2 = "SELECT * FROM usuario WHERE correo='$email'";
+	$query2 = "SELECT * FROM usuario WHERE correo='$email_login'";
 	$resultado2=mysql_query($query2); 
 	$row = mysql_fetch_array($resultado2);
 	$ip_publica=$row['ip_publica'];
@@ -25,7 +25,4 @@
 		header("Location: http://morgadoluengo.com/secberry/nuevo_secberry/index.html");
 	}
 
-	
-	
-	
 	?>
